@@ -1,0 +1,4 @@
+Khi tạo JWT, bạn dùng Secret Key A để ký.
+Khi xác minh, bạn lại tạo Secret Key B mới → khác với key ban đầu.
+Nguyên tắc JWT: ký và xác minh phải dùng cùng một Secret Key. Nếu khác key, chữ ký không khớp → token bị coi là Invalid JWT.
+Vì vậy, lỗi xảy ra do logic sai: mỗi lần gọi Keys.secretKeyFor(...) sinh ra key ngẫu nhiên mới, không trùng với key đã dùng để ký.
